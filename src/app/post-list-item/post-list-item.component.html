@@ -1,0 +1,20 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postItem.loveIts > 0,
+                'list-group-item-danger': postItem.loveIts < 0}">
+
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <span>
+
+      <h2>
+        {{postItem.title}} <span class="example-spacer">{{postItem.created_at | date: 'short'}}</span>
+      </h2>
+    </span>
+  </div>
+
+  <p>
+    {{postItem.content}}
+  </p>
+  <span><button class="btn btn-success" (click)="onLoveIt(1)">Love It</button></span>
+  <span class="button-spacer"><button class="btn btn-danger" (click)="onLoveIt(-1)">Don't Love It</button></span>
+
+</li>
